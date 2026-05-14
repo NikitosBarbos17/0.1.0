@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог навчальних ресурсів</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="page">
+
+    <h1>Каталог навчальних ресурсів</h1>
+
+    <div class="container">
+
+        <form id="resourceForm">
+
+            <h2>Додати ресурс</h2>
+
+            <label for="title">Назва ресурсу</label>
+            <input type="text" id="title">
+            <div class="error" id="titleError"></div>
+
+            <label for="url">URL</label>
+            <input type="url" id="url">
+            <div class="error" id="urlError"></div>
+
+            <label for="type">Тип ресурсу</label>
+
+            <select id="type">
+                <option value="">Оберіть</option>
+                <option>Відео</option>
+                <option>Стаття</option>
+                <option>Курс</option>
+                <option>Книга</option>
+            </select>
+
+            <div class="error" id="typeError"></div>
+
+            <label for="description">Опис</label>
+
+            <textarea id="description"></textarea>
+
+            <div class="error" id="descriptionError"></div>
+
+            <label for="author">Автор</label>
+            <input type="text" id="author">
+
+            <div class="error" id="authorError"></div>
+
+            <label for="rating">Рейтинг</label>
+
+            <select id="rating">
+                <option value="">Оберіть рейтинг</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+
+            <div class="error" id="ratingError"></div>
+
+            <button type="submit">Зберегти</button>
+
+        </form>
+
+
+        <div class="tableSection">
+
+            <h2>Список ресурсів</h2>
+
+            <div class="controls">
+
+                <input type="text" id="search" placeholder="Пошук ресурсу">
+
+                <select id="filterType">
+                    <option value="">Усі типи</option>
+                    <option>Відео</option>
+                    <option>Стаття</option>
+                    <option>Курс</option>
+                    <option>Книга</option>
+                </select>
+
+                <select id="sortRating">
+                    <option value="">Без сортування</option>
+                    <option value="asc">Рейтинг ↑</option>
+                    <option value="desc">Рейтинг ↓</option>
+                </select>
+
+            </div>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Назва</th>
+                        <th>URL</th>
+                        <th>Тип</th>
+                        <th>Опис</th>
+                        <th>Автор</th>
+                        <th>Рейтинг</th>
+                        <th>Дії</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tableBody"></tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
